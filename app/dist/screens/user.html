@@ -23,12 +23,12 @@
             <form>
                 <div class="inputs-div">
                     <label class="form-labels">Name</label>                  
-                    <input id="inp-name" type="text">
+                    <input id="inp-name" type="text" onclick="addTextMask()">
                 </div>
 
                 <div class="inputs-div">                    
                     <label class="form-labels">CPF</label>  
-                    <input id="inp-cpf" type="text">
+                    <input id="inp-cpf" type="text" maxlength="14" onclick="cpfMask()">
                 </div>
 
                 <div class="inputs-div">                    
@@ -80,5 +80,9 @@
         <div class="button-div">
             <a href="#"><button type="submit">Submit</button></a>
         </div>
+
+    <script src="../../src/view/cpf-mask.js"></script>
+    <script src="../../src/view/text-mask.js"></script>
+
     </body>
 </html>
