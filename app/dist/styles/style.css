@@ -133,6 +133,9 @@ header #description {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 1rem;
   margin-left: 2rem;
   width: 100%;
@@ -148,17 +151,26 @@ header #description {
   font-size: 1rem;
 }
 
-.container .div-informations {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.container .button-div button:hover {
+  background-color: blue;
 }
 
-.container .div-informations .lists {
+.container .button-div .filter-form {
+  border: 1px solid #3b45ff;
+  border-radius: 8px;
+  width: 30%;
+  height: 3rem;
+  font-size: 1rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  outline: none;
+}
+
+.container .button-div .filter-form:hover {
+  border: 2px solid #3b45ff;
+}
+
+.container .div-informations {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,6 +184,17 @@ header #description {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.container .div-informations .ul-lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
   border: 2px solid #3b45ff;
   border-radius: 8px;
   margin: 2rem;
@@ -179,28 +202,35 @@ header #description {
   padding: 1rem;
 }
 
-.container .div-informations .lists ul {
-  list-style: none;
-}
-
-.container .div-informations .lists ul li {
+.container .div-informations .ul-lists li {
   margin: 8px;
   font-size: 1.25rem;
 }
 
-.container .div-informations .lists .editButton {
+.container .div-informations .ul-lists a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
   width: 30%;
   height: 2rem;
   background-color: #3b45ff;
-  margin-right: 1rem;
+  margin-left: 1rem;
   margin-top: 1rem;
   border: none;
   border-radius: 4px;
   color: white;
   font-size: 1rem;
+  text-decoration: none;
 }
 
-.container .div-informations .lists .deleteButton {
+.container .div-informations .ul-lists .deleteButton {
   width: 30%;
   height: 2rem;
   background-color: #b40808;

@@ -12,13 +12,12 @@ function showUsers(users) {
     return users.map((user) => {
         var _a;
         let ul = document.createElement('ul');
-        let divUsersList = document.createElement('div');
-        divUsersList.classList.add('lists');
-        let editButton = document.createElement('button');
-        editButton.classList.add('editButton');
-        editButton.innerHTML = "Edit";
-        editButton.setAttribute("onclick", "editUser(this); window.location.href='./editScreen.html'");
-        editButton.setAttribute("id", user._id);
+        ul.setAttribute('class', 'ul-lists');
+        let a = document.createElement('a');
+        a.innerHTML = "Edit";
+        a.setAttribute("onclick", "editUser(this)");
+        a.setAttribute("id", user._id);
+        a.setAttribute("href", "editUser.html");
         let deleteButton = document.createElement('button');
         deleteButton.classList.add('deleteButton');
         deleteButton.innerHTML = "Delete";
@@ -60,10 +59,9 @@ function showUsers(users) {
         ul.appendChild(state);
         ul.appendChild(country);
         ul.appendChild(zipCode);
-        ul.appendChild(editButton);
+        ul.appendChild(a);
         ul.appendChild(deleteButton);
-        divUsersList.appendChild(ul);
-        (_a = document.querySelector('.div-informations')) === null || _a === void 0 ? void 0 : _a.appendChild(divUsersList);
+        (_a = document.querySelector('.div-informations')) === null || _a === void 0 ? void 0 : _a.appendChild(ul);
     });
 }
 function postUser() {

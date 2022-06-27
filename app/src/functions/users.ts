@@ -13,14 +13,14 @@ function showUsers(users) {
     return users.map((user) => {        
 
         let ul = document.createElement('ul')
-        let divUsersList = document.createElement('div')
-        divUsersList.classList.add('lists')
+        ul.setAttribute('class', 'ul-lists')
 
-        let editButton = document.createElement('button')
-        editButton.classList.add('editButton')
-        editButton.innerHTML = "Edit"
-        editButton.setAttribute("onclick", "editUser(this); window.location.href='./editScreen.html'")
-        editButton.setAttribute("id", user._id)
+        
+        let a = document.createElement('a')
+        a.innerHTML = "Edit"
+        a.setAttribute("onclick", "editUser(this)")
+        a.setAttribute("id", user._id)
+        a.setAttribute("href", "editUser.html")
 
         let deleteButton = document.createElement('button')
         deleteButton.classList.add('deleteButton')
@@ -66,12 +66,10 @@ function showUsers(users) {
         ul.appendChild(state);
         ul.appendChild(country);
         ul.appendChild(zipCode);
-        ul.appendChild(editButton);
+        ul.appendChild(a);
         ul.appendChild(deleteButton);
 
-        divUsersList.appendChild(ul);
-
-        document.querySelector('.div-informations')?.appendChild(divUsersList);
+        document.querySelector('.div-informations')?.appendChild(ul);
     });    
 }
 

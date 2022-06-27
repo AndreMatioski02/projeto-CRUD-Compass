@@ -12,13 +12,12 @@ function showTasks(tasks) {
     return tasks.map((task) => {
         var _a;
         let ul = document.createElement('ul');
-        let divTasksList = document.createElement('div');
-        divTasksList.classList.add('lists');
-        let editButton = document.createElement('button');
-        editButton.classList.add('editButton');
-        editButton.innerHTML = "Edit";
-        editButton.setAttribute("onclick", "editTask(this); window.location.href='./editScreen.html'");
-        editButton.setAttribute("id", task._id);
+        ul.setAttribute('class', 'ul-lists');
+        let a = document.createElement('a');
+        a.innerHTML = "Edit";
+        a.setAttribute("onclick", "editUser(this)");
+        a.setAttribute("id", task._id);
+        a.setAttribute("href", "editUser.html");
         let deleteButton = document.createElement('button');
         deleteButton.classList.add('deleteButton');
         deleteButton.innerHTML = "Delete";
@@ -29,14 +28,13 @@ function showTasks(tasks) {
         let user = document.createElement('li');
         description.innerHTML = `Description: ${task.description}`;
         date.innerHTML = `Date: ${task.date}`;
-        user.innerHTML = `Birth Date: ${task.user}`;
+        user.innerHTML = `User: ${task.user}`;
         ul.appendChild(description);
         ul.appendChild(date);
         ul.appendChild(user);
-        ul.appendChild(editButton);
+        ul.appendChild(a);
         ul.appendChild(deleteButton);
-        divTasksList.appendChild(ul);
-        (_a = document.querySelector('.div-informations')) === null || _a === void 0 ? void 0 : _a.appendChild(divTasksList);
+        (_a = document.querySelector('.div-informations')) === null || _a === void 0 ? void 0 : _a.appendChild(ul);
     });
 }
 function postTask() {
