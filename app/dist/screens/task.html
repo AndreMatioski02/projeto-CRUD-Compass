@@ -7,7 +7,7 @@
     <title>API Restfull - Task</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body onload="getTasks()">
+<body onload="getTasks(); populateTasks()">
     <header>
         <h1 id="title">Which information type do you want to insert?</h1>
         <div class="option-btns">
@@ -31,12 +31,14 @@
 
             <div class="inputs-div">                    
                 <label class="form-labels">User</label>  
-                <input id="inp-user" type="text">
+                <select class="select-user">
+                    <option value="">-- Select a user --</option>
+                </select>
             </div>        
         
             <div class="button-div">
                 <button type="submit" onclick="postTask()">Submit</button>
-                <input type="text" class="filter-form" placeholder="Search for a user">
+                <input type="text" class="filter-form" placeholder="Search for a task">
             </div>
 
             <div class="div-informations">

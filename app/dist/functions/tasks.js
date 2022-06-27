@@ -15,9 +15,9 @@ function showTasks(tasks) {
         ul.setAttribute('class', 'ul-lists');
         let a = document.createElement('a');
         a.innerHTML = "Edit";
-        a.setAttribute("onclick", "editUser(this)");
+        a.setAttribute("onclick", "editTask(this)");
         a.setAttribute("id", task._id);
-        a.setAttribute("href", "editUser.html");
+        // a.setAttribute("href", "editTask.html")
         let deleteButton = document.createElement('button');
         deleteButton.classList.add('deleteButton');
         deleteButton.innerHTML = "Delete";
@@ -59,17 +59,14 @@ function postTask() {
     });
 }
 function editTask(task) {
-    const description = document.getElementById('inp-description');
-    const date = document.getElementById('inp-date');
-    const user = document.getElementById('inp-user');
-    fetch(`http://localhost:3000/users/${task.id}`, {
-        method: "PUT"
+    fetch(`http://localhost:3000/tasks/${task.id}`, {
+        method: "GET"
     })
         .then(function (res) {
         return res.json();
     })
-        .then(function (json) {
-        console.log(json);
+        .then(function (data) {
+        populateInputTasks(data);
     });
 }
 function deleteTask(task) {
@@ -81,5 +78,29 @@ function deleteTask(task) {
     })
         .then(function (json) {
         console.log(json);
+    });
+}
+function populateInputTasks(data) {
+    const description = document.querySelector('#inp-description');
+    const date = document.querySelector('#inp-date');
+    const user = document.querySelector('.select-user');
+    description.value = data.description;
+    date.value = data.date;
+    user.value = data.user._id;
+}
+function populateTasks() {
+    const select = document.querySelector(".select-user");
+    fetch("http://localhost:3000/users")
+        .then(function (res) {
+        return res.json();
+    })
+        .then(function (data) {
+        let option;
+        for (let i = 0; i < data.length; i++) {
+            option = document.createElement('option');
+            option.value = data[i]._id;
+            option.text = data[i].name;
+            select.appendChild(option);
+        }
     });
 }

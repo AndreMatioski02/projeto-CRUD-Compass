@@ -104,26 +104,14 @@ function postUser() {
     });
 }
 function editUser(user) {
-    const name = document.getElementById('inp-name');
-    const cpf = document.getElementById('inp-cpf');
-    const birthDate = document.getElementById('inp-birthdate');
-    const email = document.getElementById('inp-email');
-    const password = document.getElementById('inp-password');
-    const address = document.getElementById('inp-address');
-    const number = document.getElementById('inp-number');
-    const complement = document.getElementById('inp-complement');
-    const city = document.getElementById('inp-city');
-    const state = document.getElementById('inp-state');
-    const country = document.getElementById('inp-country');
-    const zipCode = document.getElementById('inp-zipcode');
     fetch(`http://localhost:3000/users/${user.id}`, {
-        method: "PUT"
+        method: "GET"
     })
         .then(function (res) {
         return res.json();
     })
-        .then(function (json) {
-        console.log(json);
+        .then(function (data) {
+        populateInputUsers(data);
     });
 }
 function deleteUser(user) {
@@ -136,4 +124,12 @@ function deleteUser(user) {
         .then(function (json) {
         console.log(json);
     });
+}
+function populateInputUsers(data) {
+    const description = document.querySelector('#inp-description');
+    const date = document.querySelector('#inp-date');
+    const user = document.querySelector('.select-user');
+    description.value = data.description;
+    date.value = data.date;
+    user.value = data.user._id;
 }

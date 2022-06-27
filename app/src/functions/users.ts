@@ -117,29 +117,15 @@ function postUser() {
 }
 
 function editUser(user) {
-    const name = document.getElementById('inp-name')! as HTMLInputElement;
-    const cpf = document.getElementById('inp-cpf')! as HTMLInputElement;
-    const birthDate = document.getElementById('inp-birthdate')! as HTMLInputElement;
-    const email = document.getElementById('inp-email')! as HTMLInputElement;
-    const password = document.getElementById('inp-password')! as HTMLInputElement;
-    const address = document.getElementById('inp-address')! as HTMLInputElement;
-    const number = document.getElementById('inp-number')! as HTMLInputElement;
-    const complement = document.getElementById('inp-complement')! as HTMLInputElement;
-    const city = document.getElementById('inp-city')! as HTMLInputElement;
-    const state = document.getElementById('inp-state')! as HTMLInputElement;
-    const country = document.getElementById('inp-country')! as HTMLInputElement;
-    const zipCode = document.getElementById('inp-zipcode')! as HTMLInputElement;
-
-
     fetch(`http://localhost:3000/users/${user.id}`, {
-        method: "PUT"
+        method: "GET"
     })
     .then(function(res) {
         return res.json();
     })
-    .then(function(json) {
-        console.log(json);
-    })
+    .then(function(data) {
+        populateInputUsers(data);
+    });
 }
 
 function deleteUser(user) {
@@ -152,4 +138,14 @@ function deleteUser(user) {
     .then(function(json) {
         console.log(json);
     })
+}
+
+function populateInputUsers(data) {
+    const description = document.querySelector('#inp-description')! as HTMLInputElement;
+    const date = document.querySelector('#inp-date')! as HTMLInputElement;
+    const user = document.querySelector('.select-user')! as HTMLInputElement;
+
+    description.value = data.description;
+    date.value = data.date;
+    user.value = data.user._id;
 }
