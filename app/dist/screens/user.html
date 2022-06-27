@@ -11,14 +11,22 @@
 
     <body onload="getUsers()">
         <header>
-            <h1 id="title">Which information type do you want to insert?</h1>
-            <div class="option-btns">
-                <a href="user.html"><button>User</button></a>
-                <a href="task.html"><button>Task</button></a>
+            <div class="main-header">
+                <h1 id="title">Which information type do you want to insert?</h1>
+                <div class="option-btns">
+                    <a href="user.html"><button>User</button></a>
+                    <a href="task.html"><button>Task</button></a>
+                </div>
             </div>
+
             <hr width="90%" color="black">
-            <p id="description">Insert your informations below</p>
+
+            <div class="secondary-header">
+                <p id="description">Insert your informations below</p>
+                
+            </div>
         </header>
+
         <div class="container">
             <form>
                 <div class="inputs-div">
@@ -83,6 +91,7 @@
                 
                 <div class="button-div">
                     <button type="submit" onclick="postUser()">Submit</button>
+                    <input type="text" class="filter-form" placeholder="Search for a name or CPF">
                 </div>
 
                 <div class="div-informations">
@@ -94,6 +103,7 @@
         <script src="../../src/view/cpf-mask.js"></script>
         <script src="../../src/view/text-mask.js"></script>
         <script src="../functions/users.js"></script>
+        <script src="../view/search-user.js"></script>
 
     </body>
 </html>
