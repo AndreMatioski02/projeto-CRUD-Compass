@@ -12,6 +12,7 @@ function emailMask(){
         const email = document.querySelector('#inp-email').value
             if(validateEmail(email)) {
                 response.innerHTML = 'Email Correto'
+                console.log('ta ok')
             }else{
                 response.innerHTML = 'Email Errado'
             }
