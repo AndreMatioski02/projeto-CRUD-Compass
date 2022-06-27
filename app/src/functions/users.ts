@@ -14,7 +14,7 @@ function showUsers(users) {
 
         let ul = document.createElement('ul')
         let divUsersList = document.createElement('div')
-        divUsersList.classList.add('users-list')
+        divUsersList.classList.add('lists')
 
         let editButton = document.createElement('button')
         editButton.classList.add('editButton')

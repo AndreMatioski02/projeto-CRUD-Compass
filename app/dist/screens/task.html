@@ -7,7 +7,7 @@
     <title>API Restfull - Task</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body>
+<body onload="getTasks()">
     <header>
         <h1 id="title">Which information type do you want to insert?</h1>
         <div class="option-btns">
@@ -32,11 +32,19 @@
             <div class="inputs-div">                    
                 <label class="form-labels">User</label>  
                 <input id="inp-user" type="text">
+            </div>        
+        
+            <div class="button-div">
+                <button type="submit" onclick="postTask()">Submit</button>
             </div>
+
+            <div class="div-informations">
+
+            </div> 
         </form>
-    </div>
-    <div class="button-div">
-        <a href="#"><button type="submit">Submit</button></a>
-    </div>
+    </div> 
+    
+    <script src="../functions/tasks.js"></script>
+
 </body>
 </html>
