@@ -23,62 +23,62 @@
             <form>
                 <div class="inputs-div">
                     <label class="form-labels">Name</label>                  
-                    <input id="inp-name" type="text" onclick="addTextMask()">
+                    <input id="inp-name" type="text" onclick="addTextMask()" required>
                 </div>
 
                 <div class="inputs-div">                    
                     <label class="form-labels">CPF</label>  
-                    <input id="inp-cpf" type="text" maxlength="14" onclick="cpfMask()">
+                    <input id="inp-cpf" type="text" maxlength="14" onclick="cpfMask()" required>
                 </div>
 
                 <div class="inputs-div">                    
                     <label class="form-labels">Birth date</label>  
-                    <input id="inp-birthdate" type="date">
+                    <input id="inp-birthdate" type="date" onfocusout="ageCalc()" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Email</label>  
-                    <input id="inp-email" type="text">
+                    <input id="inp-email" type="text" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Password</label> 
-                    <input id="inp-password" type="text" onfocusout="pass()" onfocus="this.value=''">
+                    <input id="inp-password" type="text" onfocusout="pass()" onfocus="this.value=''" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Address</label> 
-                    <input id="inp-address" type="text">
+                    <input id="inp-address" type="text" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Number</label> 
-                    <input id="inp-number" type="text">
+                    <input id="inp-number" type="text" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Complement</label> 
-                    <input id="inp-complement" type="text">
+                    <input id="inp-complement" type="text" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">City</label> 
-                    <input id="inp-city" type="text">
+                    <input id="inp-city" type="text" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">State</label> 
-                    <input id="inp-state" type="text">
+                    <input id="inp-state" type="text" required>
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Country</label> 
-                    <input id="inp-country" type="text">
+                    <input id="inp-country" type="text" required>
                 </div> 
 
                 <div class="inputs-div">
                     <label class="form-labels">Zip Code</label> 
-                    <input id="inp-zipcode" type="text">
+                    <input id="inp-zipcode" type="text" required>
                 </div> 
                 
                 <div class="button-div">
@@ -95,6 +95,7 @@
         <script src="../../src/view/email-mask.js"></script>
         <script src="../../src/view/senha-mask.js"></script>
         <script src="../../src/view/text-mask.js"></script>
+        <script src="../../src/view/age-mask.js"></script>
         <script src="../functions/users.js"></script>
 
     </body>
