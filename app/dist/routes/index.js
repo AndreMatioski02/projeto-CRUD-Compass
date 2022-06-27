@@ -4,7 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const userRoutes_js_1 = __importDefault(require("./userRoutes.js"));
 const routes = (app) => {
-    app.use(express_1.default.json());
+    app.route("/").get((req, res) => {
+        res.status(200).send({ name: "REST API - PB React" });
+    });
+    app.use(express_1.default.json(), userRoutes_js_1.default);
 };
 exports.default = routes;

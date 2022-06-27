@@ -126,7 +126,7 @@ header #description {
   border: 2px solid #3b45ff;
 }
 
-.button-div {
+.container .button-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,13 +138,77 @@ header #description {
   width: 100%;
 }
 
-.button-div button {
+.container .button-div button {
   color: white;
   border: none;
   border-radius: 8px;
   width: 10rem;
   height: 3rem;
   background-color: #3b45ff;
+  font-size: 1rem;
+}
+
+.container .div-informations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .div-informations .users-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #3b45ff;
+  border-radius: 8px;
+  margin: 2rem;
+  width: auto;
+  padding: 1rem;
+}
+
+.container .div-informations .users-list ul {
+  list-style: none;
+}
+
+.container .div-informations .users-list ul li {
+  margin: 8px;
+  font-size: 1.25rem;
+}
+
+.container .div-informations .users-list .editButton {
+  width: 30%;
+  height: 2rem;
+  background-color: #3b45ff;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+}
+
+.container .div-informations .users-list .deleteButton {
+  width: 30%;
+  height: 2rem;
+  background-color: #b40808;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
   font-size: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
