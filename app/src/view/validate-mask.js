@@ -17,37 +17,37 @@ function validateInputs(){
         alert('The input Name is Empty')
     }
     if (isNaN(input_cpf)) {
-        alert('The input Name is Empty')
+        alert('The input CPF is Empty')
     }
     if (isNaN(input_brth)) {
-        alert('The input Name is Empty')
+        alert('The input birth date is Empty')
     }
     if (isNaN(input_email)) {
-        alert('The input Name is Empty')
+        alert('The input Email is Empty')
     }
     if (isNaN(input_pass)) {
-        alert('The input Name is Empty')
+        alert('The input Password is Empty')
     }
     if (isNaN(input_address)) {
-        alert('The input Name is Empty')
+        alert('The input Address is Empty')
     }
     if (isNaN(input_num)) {
-        alert('The input Name is Empty')
+        alert('The input Number is Empty')
     }
     if (isNaN(input_comp)) {
-        alert('The input Name is Empty')
+        alert('The input Complement is Empty')
     }
     if (isNaN(input_city)) {
-        alert('The input Name is Empty')
+        alert('The input City is Empty')
     }
     if (isNaN(input_state)) {
-        alert('The input Name is Empty')
+        alert('The input State is Empty')
     }
     if (isNaN(input_country)) {
-        alert('The input Name is Empty')
+        alert('The input Country is Empty')
     }
     if (isNaN(input_zip)) {
-        alert('The input Name is Empty')
+        alert('The input Zip Code is Empty')
     }
     
 }
