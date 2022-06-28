@@ -1,21 +1,27 @@
 // const { response } = require("express");
 
-function validateEmail(){
-    const validate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return validate.test(String(email).toLowerCase());
-    console.log('foi')
-}
-function emailMask(){
-    const inputEmail = document.querySelector('#inp-email')
-    //trocar por button ^
+// function validateEmail(email){
+//     // const validate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     // console.log(validate.test(String('c.c@gmail.com').toLowerCase()))
+//     // return validate.test(String(email).toLowerCase());
+//     console.log(email)
+//     return !email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
     
-    inputEmail.addEventListener('keypress',() => {
-        const email = document.querySelector('#inp-email').value
-            if(validateEmail(email)) {
+// }
+function emailMask(){
+    let inputEmail = document.querySelector('#inp-email')
+    //trocar por button ^
+    // console.log(inputEmail.value)
+    // inputEmail.addEventListener('keypress',() => {
+        let email = inputEmail.value
+        // console.log(inputEmail.value)
+        // console.log(validateEmail(email))
+            if(email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
                 // email= 'Correct Email'
-                console.log('ta ok')
+                console.log('Not a error')
             }else{
-                email = 'Wrong Errado'
+                // email = 'Wrong Errado'
+                console.log('error')
             }
-    })
+    // })
 }
