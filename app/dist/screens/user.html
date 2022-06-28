@@ -11,82 +11,78 @@
 
     <body onload="getUsers()">
         <header>
-            <div class="main-header">
-                <h1 id="title">Which information type do you want to insert?</h1>
-                <div class="option-btns">
-                    <a href="user.html"><button>User</button></a>
-                    <a href="task.html"><button>Task</button></a>
-                </div>
-            </div>
+            <h1 id="title">Which information type do you want to insert?</h1>
+            <div class="option-btns">
+                <a href="user.html"><button>User</button></a>
+                <a href="task.html"><button>Task</button></a>
+            </div>            
 
             <hr width="90%" color="black">
 
-            <div class="secondary-header">
-                <p id="description">Insert your informations below</p>
-                
-            </div>
+            <p id="description">Insert your informations below</p>            
+            
         </header>
 
         <div class="container">
             <form>
                 <div class="inputs-div">
                     <label class="form-labels">Name</label>                  
-                    <input id="inp-name" type="text" onclick="addTextMask()" required>
+                    <input id="inp-name" type="text" onclick="addTextMask()">
                 </div>
 
                 <div class="inputs-div">                    
                     <label class="form-labels">CPF</label>  
-                    <input id="inp-cpf" type="text" maxlength="14" onclick="cpfMask()" required>
+                    <input id="inp-cpf" type="text" maxlength="14" onclick="cpfMask()">
                 </div>
 
                 <div class="inputs-div">                    
                     <label class="form-labels">Birth date</label>  
-                    <input id="inp-birthdate" type="date" onfocusout="ageCalc()" required>
+                    <input id="inp-birthdate" type="date">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Email</label>  
-                    <input id="inp-email" type="text" required>
+                    <input id="inp-email" type="text">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Password</label> 
-                    <input id="inp-password" type="text" onfocusout="pass()" onfocus="this.value=''" required>
+                    <input id="inp-password" type="password">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Address</label> 
-                    <input id="inp-address" type="text" required>
+                    <input id="inp-address" type="text">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Number</label> 
-                    <input id="inp-number" type="text" required>
+                    <input id="inp-number" type="text">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Complement</label> 
-                    <input id="inp-complement" type="text" required>
+                    <input id="inp-complement" type="text">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">City</label> 
-                    <input id="inp-city" type="text" required>
+                    <input id="inp-city" type="text">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">State</label> 
-                    <input id="inp-state" type="text" required>
+                    <input id="inp-state" type="text">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Country</label> 
-                    <input id="inp-country" type="text" required>
+                    <input id="inp-country" type="text">
                 </div> 
 
                 <div class="inputs-div">
                     <label class="form-labels">Zip Code</label> 
-                    <input id="inp-zipcode" type="text" required>
+                    <input id="inp-zipcode" type="text">
                 </div> 
                 
                 <div class="button-div">
@@ -96,17 +92,94 @@
 
                 <div class="div-informations">
                     
-                </div>                
+                </div>  
+                
+                <div class="modal-container" id="confirmation-modal">
+                    <div class="modal">
+                        <div class="editTitle">
+                            <p>Edit your informations here!</p>
+                        </div>
+                        <div class="modal-close-button">
+                            <button class="close-button">X</button>
+                        </div>
+    
+                        <div class="modal-inputs">
+                            <div class="inputs-div">
+                                <label class="form-labels">Name</label>                  
+                                <input id="inp-name-edit" type="text" onclick="addTextMask()">
+                            </div>
+            
+                            <div class="inputs-div">                    
+                                <label class="form-labels">CPF</label>  
+                                <input id="inp-cpf-edit" type="text" maxlength="14" onclick="cpfMask()">
+                            </div>
+            
+                            <div class="inputs-div">                    
+                                <label class="form-labels">Birth date</label>  
+                                <input id="inp-birthdate-edit" type="date">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">Email</label>  
+                                <input id="inp-email-edit" type="text">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">Password</label> 
+                                <input id="inp-password-edit" type="password">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">Address</label> 
+                                <input id="inp-address-edit" type="text">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">Number</label> 
+                                <input id="inp-number-edit" type="text">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">Complement</label> 
+                                <input id="inp-complement-edit" type="text">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">City</label> 
+                                <input id="inp-city-edit" type="text">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">State</label> 
+                                <input id="inp-state-edit" type="text">
+                            </div>
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">Country</label> 
+                                <input id="inp-country-edit" type="text">
+                            </div> 
+            
+                            <div class="inputs-div">
+                                <label class="form-labels">Zip Code</label> 
+                                <input id="inp-zipcode-edit" type="text">
+                            </div> 
+                            <input type="hidden" id="id-task">
+                        </div>
+    
+                        <div class="button-div">
+                            <button class="saveButton" id="saveButtonTask">Save</button>
+                        </div>
+                    </div>
+                </div>
+
             </form>
         </div>
 
         <script src="../../src/view/cpf-mask.js"></script>
-        <script src="../../src/view/email-mask.js"></script>
-        <script src="../../src/view/senha-mask.js"></script>
         <script src="../../src/view/text-mask.js"></script>
-        <script src="../../src/view/age-mask.js"></script>
         <script src="../functions/users.js"></script>
         <script src="../view/search-user.js"></script>
+        <script src="../../src/view/modal-pop-up-user.js"></script>
 
     </body>
 </html>
