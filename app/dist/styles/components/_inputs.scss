@@ -31,14 +31,30 @@
                     border: 2px solid rgb(59, 69, 255);
                 }
             }
+
+            select {
+                padding-left: 1rem;
+                border: 1px solid rgb(59, 69, 255);
+                border-radius: 8px;
+                width: 30vw;
+                height: 2rem;
+                outline: none;
+                font-family:Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                &:active {
+                    border: 2px solid rgb(59, 69, 255);
+                }
+            }
         }
     }
 
     .button-div {
         display: flex;
         justify-content: center;
+        align-items: center;
         margin-top: 1rem;
         margin-left: 2rem;
+        margin-bottom: 1rem;
         width: 100%;
         button {
             color: white;
@@ -48,44 +64,64 @@
             height: 3rem;
             background-color: rgb(59, 69, 255);
             font-size: 1rem;
+            &:hover {
+                background-color: blue;
+            }
+        }
+
+        .filter-form {
+            border: 1px solid rgb(59, 69, 255);
+            border-radius: 8px;
+            width: 30%;
+            height: 3rem;
+            font-size: 1rem;
+            margin-left: 2rem;
+            padding-left: 1rem;
+            outline: none;
+            &:hover {
+                border: 2px solid rgb(59, 69, 255);
+            }
         }
     }
 
     .div-informations {
         display: flex;
         flex-direction: column;
-        .lists {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid rgb(59, 69, 255);
-            border-radius: 8px;
-            margin: 2rem;
-            width: auto;
-            padding: 1rem;
-    
-            ul {
+        justify-content: center;
+        align-items: center;  
+        
+            .ul-lists {
+                display: flex;
+                flex-direction: column; 
                 list-style: none;
-    
-                li {
-                    margin: 8px;
-                    font-size: 1.25rem;
-                }
+                border: 2px solid rgb(59, 69, 255);
+                border-radius: 8px;
+                margin: 2rem;
+                width: 100%;
+                padding: 1rem;
+            li {
+                margin: 8px;
+                font-size: 1.25rem;
             }
 
-            .editButton {
+            a{ 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
                 width: 30%;
                 height: 2rem;
                 background-color: rgb(59, 69, 255);
-                margin-right: 1rem;
+                margin-left: 1rem;
                 margin-top: 1rem;
                 border: none;
                 border-radius: 4px;
                 color: white;
                 font-size: 1rem;
+                text-decoration: none;
+                cursor: pointer;
             }
-
+    
             .deleteButton { 
                 width: 30%;
                 height: 2rem;
@@ -96,8 +132,8 @@
                 border-radius: 4px;
                 color: white;
                 font-size: 1rem;
-            }
-        }
+            }    
+        }    
     }
 
 }

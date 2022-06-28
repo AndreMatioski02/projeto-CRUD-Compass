@@ -7,13 +7,17 @@ const Task_js_1 = __importDefault(require("../models/Task.js"));
 class taskController {
 }
 taskController.showTasks = (req, res) => {
-    Task_js_1.default.find((err, tasks) => {
+    Task_js_1.default.find()
+        .populate('user')
+        .exec((err, tasks) => {
         res.status(200).json(tasks);
     });
 };
 taskController.showTaskById = (req, res) => {
     const id = req.params.id;
-    Task_js_1.default.findById(id, (err, tasks) => {
+    Task_js_1.default.findById(id)
+        .populate('user')
+        .exec((err, tasks) => {
         if (err) {
             res.status(404).send({ message: `${err.message} - Task not found!` });
         }
