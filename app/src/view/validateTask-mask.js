@@ -19,7 +19,7 @@ function validateDescription(){
 }function validateUser(){
     let input_user = document.getElementById('inp-user')
     if (!isNaN(input_user) || input_user.value == "") {
-        input_user.placeholder = 'The input user Code is Empty'
+        input_user.placeholder = 'The input user is Empty'
         input_user.style.borderBlockColor = "red"
     }else if(input_user.value !== "" ){
         input_user.style.borderBlockColor = "blue"
