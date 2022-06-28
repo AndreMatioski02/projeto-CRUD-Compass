@@ -3,7 +3,9 @@ import tasks from "../models/Task.js";
 class taskController {
 
     static showTasks = (req, res) => {
-        tasks.find((err, tasks) => {
+        tasks.find()
+        .populate('user')
+        .exec((err, tasks) => {
             res.status(200).json(tasks);
         });
     }
@@ -11,7 +13,9 @@ class taskController {
     static showTaskById = (req, res) => {
         const id = req.params.id;
 
-        tasks.findById(id, (err, tasks) => {
+        tasks.findById(id)
+        .populate('user')
+        .exec((err, tasks) => {
             if(err) {
                 res.status(404).send({message: `${err.message} - Task not found!`});
             } else {

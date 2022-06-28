@@ -14,13 +14,12 @@ function showUsers(users) {
 
         let ul = document.createElement('ul')
         ul.setAttribute('class', 'ul-lists')
-
-        
+                
         let a = document.createElement('a')
         a.innerHTML = "Edit"
-        a.setAttribute("onclick", "editUser(this)")
+        a.setAttribute("onclick", "editUser(this); UserModalStart()")
         a.setAttribute("id", user._id)
-        a.setAttribute("href", "editUser.html")
+        a.classList.add('editButton')
 
         let deleteButton = document.createElement('button')
         deleteButton.classList.add('deleteButton')
@@ -32,7 +31,6 @@ function showUsers(users) {
         let cpf = document.createElement('li');
         let birthDate = document.createElement('li');
         let email = document.createElement('li');
-        let password = document.createElement('li');
         let address = document.createElement('li');
         let number = document.createElement('li');
         let complement = document.createElement('li');
@@ -45,7 +43,6 @@ function showUsers(users) {
         cpf.innerHTML = `CPF: ${user.cpf}`;
         birthDate.innerHTML = `Birth Date: ${user.birthDate}`;
         email.innerHTML = `Email: ${user.email}`;
-        password.innerHTML = `Password: ${user.password}`;
         address.innerHTML = `Address: ${user.address}`;
         number.innerHTML = `Number: ${user.number}`;
         complement.innerHTML = `Complement: ${user.complement}`;
@@ -58,7 +55,6 @@ function showUsers(users) {
         ul.appendChild(cpf);
         ul.appendChild(birthDate);
         ul.appendChild(email);
-        ul.appendChild(password);
         ul.appendChild(address);
         ul.appendChild(number);
         ul.appendChild(complement);
@@ -128,6 +124,55 @@ function editUser(user) {
     });
 }
 
+function putUsers() {
+    const name = document.getElementById('inp-name-edit')! as HTMLInputElement;
+    const cpf = document.getElementById('inp-cpf-edit')! as HTMLInputElement;
+    const birthDate = document.getElementById('inp-birthdate-edit')! as HTMLInputElement;
+    const email = document.getElementById('inp-email-edit')! as HTMLInputElement;
+    const password = document.getElementById('inp-password-edit')! as HTMLInputElement;
+    const address = document.getElementById('inp-address-edit')! as HTMLInputElement;
+    const number = document.getElementById('inp-number-edit')! as HTMLInputElement;
+    const complement = document.getElementById('inp-complement-edit')! as HTMLInputElement;
+    const city = document.getElementById('inp-city-edit')! as HTMLInputElement;
+    const state = document.getElementById('inp-state-edit')! as HTMLInputElement;
+    const country = document.getElementById('inp-country-edit')! as HTMLInputElement;
+    const zipCode = document.getElementById('inp-zipcode-edit')! as HTMLInputElement;
+    const inputHidden = document.querySelector('#id-task')! as HTMLInputElement;
+
+    const idTask = inputHidden.value
+
+    let dataEdit = {
+        name: `${name.value}`,
+        cpf: `${cpf.value}`,
+        birthDate: `${birthDate.value}`,
+        email: `${email.value}`,
+        password: `${password.value}`,
+        address: `${address.value}`,
+        number: `${number.value}`,
+        complement: `${complement.value}`,
+        city: `${city.value}`,
+        state: `${state.value}`,
+        country: `${country.value}`,
+        zipCode: `${zipCode.value}`,
+    }
+
+    console.log(dataEdit)
+
+    fetch(`http://localhost:3000/users/${idTask}`, {
+        method: "PUT",
+        body: JSON.stringify(dataEdit),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(json) {
+        console.log(json);
+    });
+
+    window.location.reload();
+}
+
 function deleteUser(user) {
     fetch(`http://localhost:3000/users/${user.id}`, {
         method: "DELETE"
@@ -141,11 +186,32 @@ function deleteUser(user) {
 }
 
 function populateInputUsers(data) {
-    const description = document.querySelector('#inp-description')! as HTMLInputElement;
-    const date = document.querySelector('#inp-date')! as HTMLInputElement;
-    const user = document.querySelector('.select-user')! as HTMLInputElement;
+    const name = document.getElementById('inp-name-edit')! as HTMLInputElement;
+    const cpf = document.getElementById('inp-cpf-edit')! as HTMLInputElement;
+    const birthDate = document.getElementById('inp-birthdate-edit')! as HTMLInputElement;
+    const email = document.getElementById('inp-email-edit')! as HTMLInputElement;
+    const password = document.getElementById('inp-password-edit')! as HTMLInputElement;
+    const address = document.getElementById('inp-address-edit')! as HTMLInputElement;
+    const number = document.getElementById('inp-number-edit')! as HTMLInputElement;
+    const complement = document.getElementById('inp-complement-edit')! as HTMLInputElement;
+    const city = document.getElementById('inp-city-edit')! as HTMLInputElement;
+    const state = document.getElementById('inp-state-edit')! as HTMLInputElement;
+    const country = document.getElementById('inp-country-edit')! as HTMLInputElement;
+    const zipCode = document.getElementById('inp-zipcode-edit')! as HTMLInputElement;
+    const inputHidden = document.querySelector('#id-task')! as HTMLInputElement;
 
-    description.value = data.description;
-    date.value = data.date;
-    user.value = data.user._id;
+    inputHidden!.setAttribute('value' ,data._id)
+
+    name.value = data.name;
+    cpf.value = data.cpf;
+    birthDate.value = data.birthDate;
+    email.value = data.email;
+    password.value = data.password;
+    address.value = data.address; 
+    number.value = data.number;
+    complement.value = data.complement;
+    city.value = data.city; 
+    state.value = data.state;
+    country.value = data.country;
+    zipCode.value = data.zipCode;     
 }

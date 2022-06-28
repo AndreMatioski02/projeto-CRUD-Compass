@@ -7,7 +7,7 @@
     <title>API Restfull - Task</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body onload="getTasks(); populateTasks()">
+<body onload="getTasks(); populateUsers(); populateUsersToEdit()">
     <header>
         <h1 id="title">Which information type do you want to insert?</h1>
         <div class="option-btns">
@@ -44,10 +44,48 @@
             <div class="div-informations">
 
             </div> 
+
+            <div class="modal-container" id="confirmation-modal">
+                <div class="modal">
+                    <div class="editTitle">
+                        <p>Edit your informations here!</p>
+                    </div>
+                    <div class="modal-close-button">
+                        <button class="close-button">X</button>
+                    </div>
+
+                    <div class="modal-inputs">
+                        <div class="inputs-div">
+                            <label class="form-labels">Description</label>                  
+                            <input id="inp-description-edit" type="text">
+                        </div>
+            
+                        <div class="inputs-div">                    
+                            <label class="form-labels">Date</label>  
+                            <input id="inp-date-edit" type="date">
+                        </div>
+            
+                        <div class="inputs-div">                    
+                            <label class="form-labels">User</label>  
+                            <select class="select-user-edit">
+                                <option value="">-- Select a user --</option>
+                            </select>
+                        </div> 
+                        <input type="hidden" id="id-task">
+                    </div>
+
+                    <div class="button-div">
+                        <button class="saveButton" id="saveButtonTask">Save</button>
+                    </div>
+                </div>
+            </div>
+
         </form>
     </div> 
     
-    <script src="../functions/tasks.js"></script>
+    <script src="../functions/tasks.js"></script>    
+    <script src="../view/search-user.js"></script>
+    <script src="../../src/view/modal-pop-up.js"></script>
 
 </body>
 </html>
