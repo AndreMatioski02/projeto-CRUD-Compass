@@ -1,4 +1,4 @@
-const { response } = require("express");
+// const { response } = require("express");
 
 function validateEmail(){
     const validate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -12,10 +12,10 @@ function emailMask(){
     inputEmail.addEventListener('keypress',() => {
         const email = document.querySelector('#inp-email').value
             if(validateEmail(email)) {
-                response.innerHTML = 'Email Correto'
+                // email= 'Correct Email'
                 console.log('ta ok')
             }else{
-                email = 'Email Errado'
+                email = 'Wrong Errado'
             }
     })
 }
