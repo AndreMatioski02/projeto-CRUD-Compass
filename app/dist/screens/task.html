@@ -21,17 +21,17 @@
         <form>
             <div class="inputs-div">
                 <label class="form-labels">Description</label>                  
-                <input id="inp-description" type="text" required>
+                <input id="inp-description" type="text" onfocusout="validateDescription()">
             </div>
 
             <div class="inputs-div">                    
                 <label class="form-labels">Date</label>  
-                <input id="inp-date" type="date" required>
+                <input id="inp-date" type="date" onfocusout="validateDate()">
             </div>
 
             <div class="inputs-div">                    
                 <label class="form-labels">User</label>  
-                <input id="inp-user" type="text" required>
+                <input id="inp-user" type="text" onfocusout="validateUser()">
             </div>        
         
             <div class="button-div">
@@ -45,6 +45,7 @@
     </div> 
     
     <script src="../functions/tasks.js"></script>
+    <script src="../../src/view/validateTask-mask.js"></script>
 
 </body>
 </html>
