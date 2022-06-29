@@ -21,17 +21,17 @@
         <form>
             <div class="inputs-div">
                 <label class="form-labels">Description</label>                  
-                <input id="inp-description" type="text">
+                <input id="inp-description" type="text" onfocusout="validateDescription()">
             </div>
 
             <div class="inputs-div">                    
                 <label class="form-labels">Date</label>  
-                <input id="inp-date" type="date">
+                <input id="inp-date" type="date" onfocusout="validateDate()">
             </div>
 
             <div class="inputs-div">                    
                 <label class="form-labels">User</label>  
-                <select class="select-user">
+                <select class="select-user" onfocusout="validateUser()">
                     <option value="">-- Select a user --</option>
                 </select>
             </div>        
@@ -42,7 +42,7 @@
             </div>
 
             <div class="div-informations">
-
+                
             </div> 
 
             <div class="modal-container" id="confirmation-modal">
@@ -85,6 +85,7 @@
     
     <script src="../functions/tasks.js"></script>    
     <script src="../view/search-user.js"></script>
+    <script src="../../src/view/validateTask-mask.js"></script>
     <script src="../../src/view/modal-pop-up.js"></script>
 
 </body>

@@ -22,71 +22,72 @@
             <p id="description">Insert your informations below</p>            
             
         </header>
-
-        <div class="container">
-            <form>
+        <div class="container" >
+            <form onsubmit="">
                 <div class="inputs-div">
                     <label class="form-labels">Name</label>                  
-                    <input class="inputsText" id="inp-name" type="text" onclick="addTextMask()">
+                    <input class="inputsText" id="inp-name" type="text" onfocusout="validateName()" onclick="addTextMask()">
                 </div>
 
                 <div class="inputs-div">                    
                     <label class="form-labels">CPF</label>  
-                    <input class="cpfmask" id="inp-cpf" type="text" maxlength="14" onclick="cpfMask()">
+
+                    <input class="cpfmask" id="inp-cpf" type="text" maxlength="14" onclick="cpfMask()" onfocusout="validateCpf()">
+
                 </div>
 
                 <div class="inputs-div">                    
                     <label class="form-labels">Birth date</label>  
-                    <input id="inp-birthdate" type="date">
+                    <input id="inp-birthdate" type="date" onfocusout="ageCalc();validateBrth();" >
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Email</label>  
-                    <input id="inp-email" type="text">
+                    <input id="inp-email" type="text" onchange="emailMask();" onfocusout="validateEmail()">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Password</label> 
-                    <input id="inp-password" type="password">
+                    <input id="inp-password" type="text" onfocusout="validatePass();pass();" onfocus="this.value=''" >
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Address</label> 
-                    <input id="inp-address" type="text">
+                    <input id="inp-address" type="text" onfocusout="validateAddr()">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Number</label> 
-                    <input id="inp-number" type="text">
+                    <input id="inp-number" type="text" onfocusout="validateNum()">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Complement</label> 
-                    <input id="inp-complement" type="text">
+                    <input id="inp-complement" type="text" onfocusout="validateComp()">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">City</label> 
-                    <input class="inputsText" id="inp-city" type="text">
+                    <input class="inputsText" id="inp-city" type="text" onfocusout="validateCity()">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">State</label> 
-                    <input class="inputsText" id="inp-state" type="text">
+                    <input class="inputsText" id="inp-state" type="text" onfocusout="validateState()">
                 </div>
 
                 <div class="inputs-div">
                     <label class="form-labels">Country</label> 
-                    <input class="inputsText" id="inp-country" type="text">
+                    <input class="inputsText" id="inp-country" type="text" onfocusout="validateCountry()">
                 </div> 
 
                 <div class="inputs-div">
                     <label class="form-labels">Zip Code</label> 
-                    <input id="inp-zipcode" type="text">
+                    <input id="inp-zipcode" type="text" onfocusout="validateZip()">
                 </div> 
                 
                 <div class="button-div">
-                    <button type="submit" onclick="postUser()">Submit</button>
+                    <button type="submit" onclick="validateList();postUser();">Submit</button>
                     <input type="text" class="filter-form" placeholder="Search for a name or CPF">
                 </div>
 
@@ -165,8 +166,8 @@
                             </div> 
                             <input type="hidden" id="id-task">
                         </div>
-    
-                        <div class="button-div">
+                        
+                        <div class="button-div" >
                             <button class="saveButton" id="saveButtonTask">Save</button>
                         </div>
                     </div>
@@ -175,8 +176,12 @@
             </form>
         </div>
 
+        <script src="../../src/view/validate-list.js"></script>r
         <script src="../../src/view/cpf-mask.js"></script>
+        <script src="../../src/view/password-mask.js"></script>
         <script src="../../src/view/text-mask.js"></script>
+        <script src="../../src/view/age-mask.js"></script>
+        <script src="../../src/view/validate-mask.js"></script>
         <script src="../functions/users.js"></script>
         <script src="../view/search-user.js"></script>
         <script src="../../src/view/modal-pop-up-user.js"></script>
