@@ -1,6 +1,6 @@
 function validateName(){
     let input_name = document.getElementById('inp-name')
-    console.log(!isNaN(input_name))
+    // console.log(!isNaN(input_name))
     if (!isNaN(input_name) || input_name.value == "") {
         input_name.placeholder = 'The input Name is Empty'
         input_name.style.borderBlockColor = "red"  
