@@ -54,7 +54,7 @@ function validatePass(){
 }
 function validateAddr(){
     let input_address = document.getElementById('inp-address')
-    if (!isNaN(input_address || input_address.value == "")) {
+    if (!isNaN(input_address.value || input_address.value == "")) {
         input_address.placeholder = 'The input Address is Empty'
         input_address.style.borderBlockColor = "red"
     }else if(input_address.value !== "" ){
