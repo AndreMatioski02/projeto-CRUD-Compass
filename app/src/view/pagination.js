@@ -1,16 +1,16 @@
 // TESTE
-const list = [...document.querySelectorAll('.productslist')];
+const list = [...document.querySelectorAll('.')];// Usar lista
 let count = 0;
 const items_per_page = 3;
 const pagination_numbers_container = document.querySelector('.pagination-numbers');
 
-const paginate = (p) => {
+const paginate = (pag) => {
   
   hideAll();
    
-  if(p === 'next') count += items_per_page;
-  else if(p === 'previous') count -= items_per_page;
-  else count = p;
+  if(pag === 'next') count += items_per_page;
+  else if(pag === 'previous') count -= items_per_page;
+  else count = pag;
  
   if(count < 0 ) count = 0;
   else if(count >= (list.length - items_per_page)) count = (list.length - items_per_page) + ((list.length+1) % items_per_page);
